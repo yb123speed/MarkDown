@@ -11,7 +11,7 @@ namespace 异步流_AsyncStreameam_
         {
             const int count = 100;
             Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId}-{DateTime.Now}-Index with yield starting.");
-            IAsyncEnumerable<int> sequence = ProduceMessagesYield(100);
+            IAsyncEnumerable<int> sequence = ProduceMessagesYield(count);
             var consumingTask=Task.Run(()=>ConsumeSequenceAsync(sequence));
 
             await consumingTask;
@@ -33,7 +33,7 @@ namespace 异步流_AsyncStreameam_
         {
             Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId}-{DateTime.Now}-ProduceMessagesYield called!");
 
-            for (var i = 0; i <= count; i++)
+            for (var i = 1; i <= count; i++)
             {
                 // 模拟延迟!
                 Task.Delay(TimeSpan.FromSeconds(0.1)).Wait();
