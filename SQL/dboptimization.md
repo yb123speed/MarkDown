@@ -17,7 +17,7 @@ marp: true
 
 ----
 
-![新建跟踪](..\images/sql/0x00-sqlserverprofiler.png)
+![新建跟踪](./images/sql/0x00-sqlserverprofiler.png)
 
 ----
 
